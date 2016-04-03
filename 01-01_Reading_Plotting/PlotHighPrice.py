@@ -8,7 +8,7 @@ def test_run():
     # TODO: Your code here
     plt.title('IBM High')
     plt.ylabel('$')
-    plt.plot(df['High'])
+    plt.plot(df['High']) #Or df['High'].plot()
     plt.show()  # must be called to show plots
 
 
