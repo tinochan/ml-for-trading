@@ -45,6 +45,7 @@ def test_run():
     plt.axvline(mean,color='w',linestyle='dashed',linewidth=2)
     plt.axvline(std,color='r',linestyle='dashed',linewidth=2)
     plt.axvline(-std,color='r',linestyle='dashed',linewidth=2)
+    plt.grid()
     plt.show()
 
     # Compute kurtosis
