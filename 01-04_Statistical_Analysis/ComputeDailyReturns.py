@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def symbol_to_path(symbol, base_dir="data"):
+def symbol_to_path(symbol, base_dir="../data"):
     """Return CSV file path given ticker symbol."""
     return os.path.join(base_dir, "{}.csv".format(str(symbol)))
 
@@ -44,8 +44,8 @@ def compute_daily_returns(df):
     # Using .values is necessary because when given 2 data frames, Pandas
     # will try to match each row based on index when performing element wise
     # arithmetic operations.
-    # daily_returns[1:] = (df[1:] / df[:-1].values) - 1
-    daily_returns = (df / df.shift(1))
+    #daily_returns[1:] = (df[1:] / df[:-1].values) - 1
+    daily_returns = (df / df.shift(1)) - 1
     daily_returns.ix[0, :] = 0 # set daily returns for row 0 tp 0
     return daily_returns
 
